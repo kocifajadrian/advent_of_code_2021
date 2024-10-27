@@ -57,9 +57,23 @@ public class Solution {
     }
 
     public int star2() {
+        int counter = 0;
+        int numberOfBoards = boards.size();
+        for (int number : drawNumbers) {
+            counter++;
+            for (Board board : boards) {
+                if (board.won) continue;
+                board.addDrawn(number);
+                if (counter < boardSize) continue;
+                if (board.win()) {
+                    board.won = true;
+                    numberOfBoards--;
+                    if (numberOfBoards == 0) return board.score() * number;
+                }
+            }
+        }
         return 0;
     }
-
 
     public static void main(String[] args) {
         Solution solution = new Solution();

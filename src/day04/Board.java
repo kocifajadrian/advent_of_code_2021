@@ -10,6 +10,7 @@ public class Board {
     public static int boardSize = 5;
     ArrayList<ArrayList<Integer>> numbers = null;
     Set<Integer> drawn = new HashSet<>();
+    public boolean won = false;
 
     public void addNumbers(ArrayList<ArrayList<Integer>> board) {
         numbers = new ArrayList<>(board);
