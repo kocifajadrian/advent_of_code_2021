@@ -1,3 +1,6 @@
+// problem: https://adventofcode.com/2021/day/3
+
+
 package day03;
 
 import java.io.*;
@@ -86,7 +89,7 @@ public class Solution {
             co2Numbers = filter(co2Numbers, i, co2Character);
             if (co2Numbers.size() == 1) break;
         }
-        
+
         return binaryToDecimal(oNumbers.iterator().next()) * binaryToDecimal(co2Numbers.iterator().next());
     }
 
