@@ -41,7 +41,19 @@ public class Solution {
     }
 
     public int star2() {
-        return 0;
+        int minimum = Integer.MAX_VALUE;
+        Set<Integer> visited = new HashSet<>();
+        for (int finalPosition : numbers) {
+            int cost = 0;
+            if (visited.contains(finalPosition)) continue;
+            visited.add(finalPosition);
+            for (int crabPosition : numbers) {
+                int steps = Math.abs(finalPosition - crabPosition);
+                cost += (steps * (steps + 1)) / 2;
+            }
+            if (cost < minimum) minimum = cost;
+        }
+        return minimum;
     }
 
     public static void main(String[] args) {
